@@ -1,0 +1,22 @@
+body{
+    height: 100%;
+}
+header{
+    text-align: center;
+}
+.container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
+.menu-option{
+    background: #c1064b;
+    color: #fff;
+    line-height: 48px;
+    border-radius: 15px;
+    width: 200px;
+    cursor: pointer;
+    border: none;
+}

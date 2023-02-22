@@ -1,0 +1,29 @@
+HTML body{
+    height: 100%;
+  }
+  h1{
+    text-align:center;
+  }
+  .container{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+  }
+  .options-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: space-between;
+  }
+  #password-label{
+    align-self: flex-start;
+  }
+  #submit-button{
+    align-self: flex-start;
+  }
+  .input-block{
+    line-height: 1.5rem;
+  }
+  

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css') }}" type="text/css">
+    <script type="text/javascript" src="LinkWeb\scripts\home.js"></script>
+</head>
+<body>
+    <main id="root">
+        <header>
+            LinkWeb
+        </header>
+        <div class="container">
+            <div>
+                <a href="login">
+                    <button class="menu-option" id="login" type="button">
+                        Login
+                    </button>
+                </a>
+            </div>
+            <br>
+            <div>
+                <a href="signup">
+                    <button class="menu-option" id="sign-up" type="button">
+                        Sign Up
+                    </button>
+                </a>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>
