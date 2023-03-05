@@ -4,21 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/signup.css') }}" type="text/css">
     <title>Document</title>
 </head>
 <body>
     <div id="root">
-        <div class="container" action="/signup" method="post">
-            <form>
-                <label for="login-username" id="username-label">Email address or username</label>
-                <input class="input-block" id="login-username" placeholder="Email address or username" name="email-username" type="text">
-                <br>
-                <label for="login-password" id="password-label">Password</label>
-                <input class="input-block" id="login-password" placeholder="Password" name="password" type="text">
-                <br>
-                <input type="submit" value="Sign Up" id="submit-button">
+        <div class="container">
+            <form action="/signup" method="post">
+                <div class="form-container">
+                    <label for="login-username" id="username-label">Email address or username</label>
+                    <input class="input-block" id="login-username" placeholder="Email address or username" name="email-username" type="text">
+                    <br>
+                    <label for="login-password1" id="password-label1">Password</label>
+                    <input class="input-block" id="login-password1" placeholder="Password" name="password1" type="text">
+                    <br>
+                    <label for="login-password2" id="password-label2">Confirm Password</label>
+                    <input class="input-block" id="login-password2" placeholder="Password" name="password2" type="text">
+                    <br>
+                    <input type="submit" value="Sign Up" id="submit-button">
+                </div>
             </form>
         </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'error' %}
+                <div class="alert" role="alert">{{message}}</div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
     </div>
     
 </body>

@@ -12,3 +12,4 @@ MYSQL_HOST = 'localhost'
 MYSQL_USER = 'root'
 MYSQL_PASSWORD = 'password1234'
 MYSQL_DB = 'test'
+SQLALCHEMY_DATABASE_URI = environ.get('SQLALCHEMY_DATABASE_URI')
