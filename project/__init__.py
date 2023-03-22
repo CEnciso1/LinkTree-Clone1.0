@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import environ, path
 from dotenv import load_dotenv
+from flask_login import LoginManager
 
 basedir = path.abspath(path.dirname(__file__))
 load_dotenv(path.join(basedir, '.env'))
@@ -22,6 +23,14 @@ def create_app():
     from .models import User, Link  #Ensures model classes are defined
     
     create_database(app)
+    
+    login_manager = LoginManager()
+    login_manager.login_view = 'auth.login'
+    login_manager.init_app(app)
+    
+    @login_manager.user_loader
+    def load_user(id):
+        return User.query.get(int(id))   
     
     return app
 
